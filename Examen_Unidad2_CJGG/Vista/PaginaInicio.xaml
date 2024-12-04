@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Unidad2_CJGG.Vista.PaginaInicio"
+             Title="PaginaInicio"
+             Background="DeepSkyBlue"
+             BackgroundColor="DeepSkyBlue">
+    <VerticalStackLayout>
+        <!--Ponemos la imagen que queremos de cabecera-->
+        <Image Source="imagenfondo.jpg" 
+               Aspect="AspectFit"
+               HeightRequest="200"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"/>
+        <!--Creamos el label-->
+        <Label 
+            Text="Bienvenido a nuestra tienda"
+            FontSize="24"
+            TextColor="Black"
+            TextDecorations="Underline"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="Start"
+            Margin="10" />
+        <!--Creamos un stacklayout para poner los 3 botones de forma vertical (decorativo)-->
+
+        <StackLayout Orientation="Vertical" 
+                     HorizontalOptions="Center"
+                     VerticalOptions="End"
+                     Spacing="20"
+                     Padding="10">
+            <!-- Creamos los 3 botones, dandole el clicked que le pertenece-->
+            <Button Text="Productos" Clicked="OnProductosClicked"
+                    BackgroundColor="DarkSlateBlue"
+                    WidthRequest="200" HeightRequest="50"
+                    TextColor="White"/>
+            <Button Text="Acerca de" Clicked="OnAcercaDeClicked"
+                    BackgroundColor="DarkSlateBlue"
+                    WidthRequest="200" HeightRequest="50"
+                    TextColor="White"/>
+            <Button Text="Registro" Clicked="OnRegistroClicked"
+                    BackgroundColor="DarkSlateBlue"
+                    WidthRequest="200" HeightRequest="50"
+                    TextColor="White"/>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Unidad2_CJGG.Vista.PaginaProductos"
+             Title="Pagina Productos"
+             BackgroundColor="DeepSkyBlue">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Label Text="Lista de Productos" 
+                   FontSize="24" 
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   TextDecorations="Underline"/>
+            <!-- Hacemos la lista con la lista del cs de Productos-->
+            <ListView ItemsSource="{Binding Productos}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <!-- Le damos una columna para la imagen y otra para el nombre y la descripcion, consiguiendo los datos de la lista-->
+                                <Image Grid.RowSpan="2"
+                                       Source="{Binding imagen}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="80"
+                                       WidthRequest="80">
+                                    <!-- Hacemos un TapGestureRecognizer para poder pulsar la imagen-->
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnImageTapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding nombre}"
+                                       FontAttributes="Bold"
+                                       Margin="10,0,0,0" />
+                                <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       Text="{Binding descripcion}"
+                                       Margin="10,0,0,0" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

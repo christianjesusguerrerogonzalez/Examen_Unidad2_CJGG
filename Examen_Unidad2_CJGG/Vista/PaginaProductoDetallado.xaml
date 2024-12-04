@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Unidad2_CJGG.Vista.PaginaProductoDetallado"
+             Title="Detalles del Producto"
+             BackgroundColor="DeepSkyBlue">
+    <VerticalStackLayout Padding="10">
+        <!--Creamos la imagen, y los labels necesarios para los productos (imagen, nombre, descripcion) -->
+        <Image 
+            x:Name="imgProducto"
+            Aspect="AspectFill"
+            HeightRequest="300"
+            WidthRequest="300"
+            HorizontalOptions="Center"/>
+
+        <Label 
+            x:Name="lblNombre"
+            FontAttributes="Bold"
+            TextColor="White"
+            BackgroundColor="DarkBlue"
+            HorizontalOptions="Center" 
+            Margin="0,20,0,10"/>
+
+        <Label 
+            x:Name="lblDescripcion"
+            TextColor="White"
+            BackgroundColor="DarkBlue"
+            HorizontalOptions="Center" 
+            Margin="0,0,0,20"/>
+    </VerticalStackLayout>
+</ContentPage>
